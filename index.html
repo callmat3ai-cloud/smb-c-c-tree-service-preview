@@ -1,423 +1,1672 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C @ C tree service | Garland, PA</title>
-  <meta name="description" content="C @ C tree service — professional Cleaning Service services in Garland, PA." />
-  <meta property="og:title" content="C @ C tree service | Garland, PA" />
-  <meta property="og:description" content="Professional Cleaning Service services — view our work, services, and contact info." />
-  <meta property="og:image" content="/tmp/agy_images/C-C-TREE-SERVICE-0601/hero.webp" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C @ C Tree Service | Premium Tree Care & Storm Response | Garland, PA</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="C @ C Tree Service offers premium, professional tree care in Garland, PA, and surrounding areas. Licensed & insured tree removal, stump grinding, pruning, cabling, lot clearing, and 24/7 emergency storm response. Call +1 814-688-3090 for your free estimate today.">
+  <meta name="keywords" content="tree service Garland PA, tree removal Garland Pennsylvania, stump grinding PA, professional tree pruning, emergency storm damage cleanup, lot clearing, arborist Garland PA, cabling and bracing, C @ C tree service">
+  <meta name="author" content="C @ C Tree Service">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://c-c-tree-service.com/">
+  <meta property="og:title" content="C @ C Tree Service | Garland, PA">
+  <meta property="og:description" content="Elite arborist care in Garland, PA. Specializing in precision tree removal, stump grinding, cabling, pruning, and emergency response. Fully licensed & insured. Free estimates.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://c-c-tree-service.com/">
+  <meta property="twitter:title" content="C @ C Tree Service | Garland, PA">
+  <meta property="twitter:description" content="Elite arborist care in Garland, PA. Specializing in precision tree removal, stump grinding, cabling, pruning, and emergency response. Fully licensed & insured. Free estimates.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    /* --------------------------------------------------
+       DESIGN SYSTEM & CSS VARIABLES
+       -------------------------------------------------- */
+    :root {
+      --color-bg-dark: #0a0a0a;
+      --color-bg-card: #121212;
+      --color-gold: #d4af37;
+      --color-gold-hover: #f3e5ab;
+      --color-gold-dark: #aa9052;
+      --color-text-light: #f5f5f7;
+      --color-text-muted: #a0a0a5;
+      --color-border: rgba(212, 175, 55, 0.15);
+      --color-border-hover: rgba(212, 175, 55, 0.6);
+      
+      --font-serif: 'Cinzel', Georgia, serif;
+      --font-sans: 'Montserrat', Helvetica, Arial, sans-serif;
+      --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.25s ease;
+    }
+
+    /* Reset & Global Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--color-bg-dark);
+      color: var(--color-text-light);
+    }
+
     body {
-      font-family: 'DM Sans', sans-serif;
-      color: #f0f0f0;
-      background: #0f1117;
+      font-family: var(--font-sans);
       line-height: 1.6;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    :root {
-      --accent:       #0e9f6e;
-      --accent-dark:  #047857;
-      --accent-glow:  #0e9f6e30;
-      --surface-1:    #16181f;
-      --surface-2:    #1e2029;
-      --surface-3:    #262830;
-      --border:       #2e3040;
-      --text-1:       #f0f0f0;
-      --text-2:       #9090a0;
-      --text-3:       #606070;
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-fast);
     }
 
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ===== HERO — dark, full-bleed image ===== */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 clamp(16px, 4vw, 48px) clamp(40px, 6vw, 64px);
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('/tmp/agy_images/C-C-TREE-SERVICE-0601/hero.webp');
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-    }
-    .hero-bg::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(10, 11, 20, 0.98) 0%,
-        rgba(10, 11, 20, 0.7)  40%,
-        rgba(10, 11, 20, 0.3)  70%,
-        rgba(10, 11, 20, 0.1) 100%
-      );
-    }
-    .hero-content { position: relative; z-index: 1; max-width: 680px; }
-
-    .niche-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: var(--accent);
-      color: #fff;
-      font-size: clamp(0.65rem, 2vw, 0.75rem);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: clamp(4px, 1vw, 6px) clamp(10px, 2vw, 14px);
-      border-radius: 4px;
-      margin-bottom: clamp(12px, 2vw, 18px);
+    button, input, select, textarea {
+      font-family: inherit;
     }
 
-    .hero h1 {
-      font-size: clamp(2.2rem, 7vw, 4rem);
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      margin-bottom: clamp(8px, 1.5vw, 12px);
-    }
-    .hero-location {
-      font-size: clamp(0.85rem, 2.5vw, 1.05rem);
-      color: var(--text-2);
-      margin-bottom: clamp(16px, 3vw, 24px);
-    }
-    .hero-rating {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px clamp(10px, 2vw, 16px);
-      font-size: 0.85rem;
-      color: var(--text-1);
-      margin-bottom: clamp(20px, 4vw, 32px);
-      display: flex;
-    }
-    .hero-stars { color: #f59e0b; letter-spacing: 1px; }
-    .hero-review-count { color: var(--text-2); }
-
-    .hero-actions {
-      display: flex; flex-wrap: wrap; gap: 10px;
-    }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent);
-      color: #fff;
-      font-size: clamp(0.85rem, 2.5vw, 1rem);
-      font-weight: 700;
-      padding: clamp(10px, 2vw, 13px) clamp(18px, 4vw, 26px);
-      border-radius: 8px;
-      transition: background 0.15s, transform 0.15s;
-      letter-spacing: 0.01em;
-    }
-    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
-    .btn-primary:active { transform: translateY(0); }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--surface-2);
-      color: var(--text-1);
-      border: 1px solid var(--border);
-      font-size: clamp(0.85rem, 2.5vw, 1rem);
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
       font-weight: 600;
-      padding: clamp(10px, 2vw, 13px) clamp(18px, 4vw, 26px);
-      border-radius: 8px;
-      transition: background 0.15s, border-color 0.15s;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
     }
-    .btn-ghost:hover { background: var(--surface-3); border-color: var(--accent); }
 
-    /* ===== WRAP ===== */
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); }
-    .wrap--narrow { max-width: 640px; }
+    /* Section Styling */
+    section {
+      position: relative;
+      padding: 140px 8% 100px 8%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
 
-    /* ===== SECTION SPACING ===== */
-    .section { padding: clamp(48px, 8vw, 80px) 0; }
-    .section + .section { border-top: 1px solid var(--border); }
-    .section--dark { background: var(--surface-1); }
+    /* --------------------------------------------------
+       SCROLL-TRIGGERED REVEAL SYSTEM
+       -------------------------------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-    /* ===== SECTION HEADER ===== */
-    .section-label {
-      font-size: 0.7rem;
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-active {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Delay utilities */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+
+    /* --------------------------------------------------
+       LAYOUT HEADER & NAVIGATION
+       -------------------------------------------------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition-smooth);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    header.scrolled {
+      background-color: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 25px 5%;
+      transition: var(--transition-smooth);
+    }
+
+    header.scrolled .nav-container {
+      padding: 10px 5%;
+    }
+
+    .logo-box {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
       font-weight: 700;
+      color: var(--color-text-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box span.gold-text {
+      color: var(--color-gold);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 0.85rem;
+      font-weight: 500;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .section-title {
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1.2;
-      margin-bottom: clamp(24px, 4vw, 36px);
+      color: var(--color-text-muted);
+      position: relative;
+      padding: 5px 0;
     }
 
-    /* ===== SERVICES — dark cards ===== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-      gap: clamp(12px, 2vw, 16px);
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-gold);
+      transition: var(--transition-fast);
     }
-    .service-card {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: clamp(16px, 3vw, 22px);
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+
+    .nav-link:hover {
+      color: var(--color-text-light);
     }
-    .service-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px var(--accent-glow);
+
+    .nav-link:hover::after {
+      width: 100%;
     }
-    .service-icon {
-      font-size: clamp(1.4rem, 4vw, 1.8rem);
-      margin-bottom: 12px;
-      line-height: 1;
-    }
-    .service-card h3 {
-      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+
+    .nav-cta-btn {
+      border: 1px solid var(--color-gold);
+      color: var(--color-gold);
+      padding: 10px 22px;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-    .service-card p {
-      font-size: clamp(0.75rem, 2vw, 0.82rem);
-      color: var(--text-2);
-      line-height: 1.55;
-    }
-
-    /* ===== INFO GRID — address + contact ===== */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-      gap: clamp(12px, 2vw, 16px);
-      margin-bottom: clamp(24px, 4vw, 32px);
-    }
-    .info-card {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: clamp(16px, 3vw, 22px);
-    }
-    .info-card-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 8px;
+      transition: var(--transition-smooth);
     }
-    .info-card-value {
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      color: var(--text-1);
-      font-weight: 400;
-      line-height: 1.5;
-    }
-    .info-card a.info-link {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-      transition: opacity 0.15s;
-    }
-    .info-card a.info-link:hover { opacity: 0.8; }
 
-    /* ===== MAP ===== */
-    .map-wrap {
-      border-radius: 12px;
+    .nav-cta-btn:hover {
+      background-color: var(--color-gold);
+      color: var(--color-bg-dark);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.45);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background-color: var(--color-text-light);
+      transition: var(--transition-fast);
+    }
+
+    /* --------------------------------------------------
+       HERO SECTION (LUXE FULL SCREEN PARALLAX OVERLAY)
+       -------------------------------------------------- */
+    #hero {
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
       overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .map-wrap iframe { width: 100%; height: clamp(200px, 30vw, 300px); border: 0; display: block; }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: #07080d;
-      border-top: 1px solid var(--border);
-      padding: clamp(24px, 4vw, 36px) clamp(16px, 4vw, 48px);
+      background-image: linear-gradient(rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.95)), 
+                        url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       text-align: center;
     }
-    .footer-inner { max-width: 860px; margin: 0 auto; }
-    footer p { font-size: 0.78rem; color: var(--text-3); line-height: 1.7; }
-    footer a { color: var(--text-3); transition: color 0.15s; }
-    footer a:hover { color: var(--accent); }
 
-    /* ===== STICKY BAR ===== */
-    .sticky-bar {
-      position: fixed; bottom: 0; left: 0; right: 0;
-      background: rgba(10, 11, 23, 0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border);
-      padding: clamp(10px, 2vw, 14px) clamp(16px, 4vw, 24px);
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 12px;
-      z-index: 100;
-      box-shadow: 0 -4px 24px rgba(0,0,0,0.5);
+    .hero-content {
+      max-width: 900px;
+      padding: 0 20px;
+      z-index: 10;
     }
-    .sticky-bar-info { min-width: 0; }
-    .sticky-bar-name {
-      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+
+    .hero-pretitle {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: 4rem;
       font-weight: 700;
-      color: #fff;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      color: var(--color-text-light);
+      margin-bottom: 30px;
+      line-height: 1.15;
+      text-transform: uppercase;
     }
-    .sticky-bar-phone {
-      font-size: clamp(0.72rem, 2vw, 0.8rem);
-      color: var(--text-2);
-      white-space: nowrap;
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      margin-bottom: 45px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
     }
-    .sticky-cta {
-      background: var(--accent);
-      color: #fff;
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons system */
+    .btn-luxury {
+      position: relative;
+      display: inline-block;
+      padding: 18px 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      border-radius: 0;
+    }
+
+    .btn-gold {
+      background-color: var(--color-gold);
+      color: var(--color-bg-dark);
+      border: 1px solid var(--color-gold);
+    }
+
+    .btn-gold:hover {
+      background-color: transparent;
+      color: var(--color-gold);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-text-light);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+
+    /* --------------------------------------------------
+       SECTION HEADER COMPONENT
+       -------------------------------------------------- */
+    .section-header {
+      margin-bottom: 80px;
+      position: relative;
+    }
+
+    .sec-number {
+      font-family: var(--font-serif);
+      font-size: 5rem;
       font-weight: 700;
-      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-      padding: clamp(8px, 2vw, 11px) clamp(16px, 3vw, 22px);
-      border-radius: 8px;
-      white-space: nowrap;
+      color: rgba(212, 175, 55, 0.05);
+      position: absolute;
+      top: -45px;
+      left: -10px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .sec-pre {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .sec-title {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+    }
+
+    .sec-desc {
+      color: var(--color-text-muted);
+      margin-top: 20px;
+      max-width: 600px;
+      font-size: 0.95rem;
+    }
+
+    /* --------------------------------------------------
+       SERVICES SECTION (ELEGANT BORDERED CARDS)
+       -------------------------------------------------- */
+    #services {
+      background-color: var(--color-bg-dark);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .service-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      padding: 45px 35px;
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 380px;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid transparent;
+      transition: var(--transition-smooth);
+      pointer-events: none;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--color-border-hover);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.05);
+    }
+
+    .service-card:hover::before {
+      border-color: var(--color-gold);
+      transform: scale(0.97);
+      opacity: 0.5;
+    }
+
+    .service-icon-box {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 35px;
+      color: var(--color-gold);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 50%;
+      transition: var(--transition-smooth);
+    }
+
+    .service-card:hover .service-icon-box {
+      background-color: var(--color-gold);
+      color: var(--color-bg-dark);
+      border-color: var(--color-gold);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    }
+
+    .service-title {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .service-text {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .service-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    /* --------------------------------------------------
+       ABOUT SECTION (ASYMMETRICAL WITH TIMELINE)
+       -------------------------------------------------- */
+    #about {
+      background-color: #0e0e0e;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-visual {
+      position: relative;
+      border: 1px solid var(--color-border);
+      padding: 15px;
+      transition: var(--transition-smooth);
+    }
+
+    .about-visual:hover {
+      border-color: var(--color-gold);
+    }
+
+    .about-img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(0.8) contrast(1.1);
+      transition: var(--transition-smooth);
+    }
+
+    .about-visual:hover .about-img {
+      filter: grayscale(0.2) contrast(1);
+    }
+
+    .about-overlay-info {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-gold);
+      padding: 30px 40px;
+      max-width: 280px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .about-overlay-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--color-gold);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .about-overlay-text {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* Luxe Timeline */
+    .timeline-container {
+      position: relative;
+      padding-left: 35px;
+      border-left: 1px solid var(--color-border);
+      margin-top: 30px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      width: 13px;
+      height: 13px;
+      background-color: var(--color-bg-dark);
+      border: 2px solid var(--color-gold);
+      position: absolute;
+      left: -42px;
+      top: 5px;
+      border-radius: 50%;
+      z-index: 10;
+      transition: var(--transition-smooth);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      background-color: var(--color-gold);
+      box-shadow: 0 0 10px var(--color-gold);
+      transform: scale(1.3);
+    }
+
+    .timeline-time {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--color-gold);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: inline-block;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-title {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* --------------------------------------------------
+       TESTIMONIALS SECTION
+       -------------------------------------------------- */
+    #testimonials {
+      background-color: var(--color-bg-dark);
+    }
+
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      padding: 40px;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-5px);
+    }
+
+    .quote-icon {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      color: rgba(212, 175, 55, 0.15);
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      line-height: 1;
+    }
+
+    .stars {
+      color: var(--color-gold);
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .testimonial-content {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-text-light);
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .author-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: #1a1a1a;
+      border: 1px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      color: var(--color-gold);
+      font-size: 0.9rem;
+    }
+
+    .author-info h4 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-light);
+    }
+
+    .author-info p {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* --------------------------------------------------
+       CONTACT SECTION (GRID, FLOATING LABELS, MAP)
+       -------------------------------------------------- */
+    #contact {
+      background-color: #0e0e0e;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+    }
+
+    .contact-info-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-methods {
+      margin-bottom: 40px;
+    }
+
+    .contact-method-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .contact-method-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon-box {
+      width: 50px;
+      height: 50px;
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      font-size: 1.2rem;
       flex-shrink: 0;
-      transition: background 0.15s;
-      display: flex; align-items: center; gap: 6px;
+      transition: var(--transition-fast);
     }
-    .sticky-cta:hover { background: var(--accent-dark); }
-    .pad-bottom { height: clamp(64px, 10vw, 80px); }
 
-    /* ===== MOBILE TWEAKS ===== */
+    .contact-method-item:hover .contact-icon-box {
+      border-color: var(--color-gold);
+      background-color: rgba(212, 175, 55, 0.05);
+    }
+
+    .contact-method-details h4 {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+      margin-bottom: 5px;
+    }
+
+    .contact-method-details p,
+    .contact-method-details a {
+      font-size: 1.05rem;
+      color: var(--color-text-light);
+    }
+
+    .contact-method-details a:hover {
+      color: var(--color-gold);
+    }
+
+    /* Map container styling */
+    .map-container {
+      width: 100%;
+      height: 320px;
+      border: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .grayscale-map {
+      filter: grayscale(1) invert(0.9) contrast(1.2);
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* Form with floating labels */
+    .contact-form-box {
+      background-color: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      padding: 50px;
+      position: relative;
+    }
+
+    .contact-form-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 15px;
+    }
+
+    .floating-group {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .floating-group input,
+    .floating-group textarea,
+    .floating-group select {
+      width: 100%;
+      padding: 18px 15px 8px 15px;
+      background-color: rgba(255,255,255, 0.01);
+      border: none;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-light);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      transition: var(--transition-smooth);
+      outline: none;
+      border-radius: 0;
+    }
+
+    .floating-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .floating-group input:focus,
+    .floating-group textarea:focus,
+    .floating-group select:focus {
+      border-bottom-color: var(--color-gold);
+      background-color: rgba(255,255,255, 0.03);
+    }
+
+    .floating-group label {
+      position: absolute;
+      left: 15px;
+      top: 16px;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+
+    /* Magic logic for floating up */
+    .floating-group input:focus ~ label,
+    .floating-group input:not(:placeholder-shown) ~ label,
+    .floating-group textarea:focus ~ label,
+    .floating-group textarea:not(:placeholder-shown) ~ label,
+    .floating-group select:focus ~ label,
+    .floating-group select:valid ~ label {
+      top: -8px;
+      left: 10px;
+      font-size: 0.75rem;
+      color: var(--color-gold);
+      background-color: var(--color-bg-card);
+      padding: 2px 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .form-success-message {
+      display: none;
+      background-color: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--color-gold);
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+      color: var(--color-gold);
+      font-family: var(--font-serif);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* --------------------------------------------------
+       MINIMAL ELEGANT FOOTER
+       -------------------------------------------------- */
+    footer {
+      background-color: var(--color-bg-dark);
+      padding: 60px 8% 40px 8%;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    .footer-badge {
+      font-size: 0.75rem;
+      color: var(--color-gold);
+      border: 1px solid var(--color-border);
+      padding: 5px 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Scroll to top micro-interaction */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 45px;
+      height: 45px;
+      background-color: rgba(18, 18, 18, 0.85);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+      z-index: 99;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top-btn:hover {
+      border-color: var(--color-gold);
+      background-color: var(--color-gold);
+      color: var(--color-bg-dark);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+
+    /* --------------------------------------------------
+       RESPONSIVE MEDIA QUERIES (MOBILE FIRST)
+       -------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+      
+      .about-visual {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .testimonials-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 100px 5% 70px 5%;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-tagline {
+        font-size: 1rem;
+      }
+
+      .sec-title {
+        font-size: 2rem;
+      }
+
+      /* Mobile Navbar Hamburger styling */
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 35px;
+        transition: var(--transition-smooth);
+        border-left: 1px solid var(--color-border);
+        padding: 50px;
+      }
+
+      .nav-menu.active {
+        right: 0;
+      }
+
+      .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .testimonials-container {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form-box {
+        padding: 30px 20px;
+      }
+    }
+
     @media (max-width: 480px) {
-      .hero { justify-content: flex-end; }
-      .services-grid { grid-template-columns: 1fr; }
-      .info-grid { grid-template-columns: 1fr; }
-    }
+      .hero-title {
+        font-size: 2rem;
+      }
 
-    /* ===== REDUCED MOTION ===== */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-      html { scroll-behavior: auto; }
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-luxury {
+        width: 100%;
+        text-align: center;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-content">
-    <div class="niche-tag">Cleaning Service</div>
-    <h1>C @ C tree service</h1>
-    <p class="hero-location">📍 Garland, PA</p>
-    <div class="hero-rating" style="display: flex;">
-      <span class="hero-stars">★★★★★</span>
-      <span>5</span>
-      <span class="hero-review-count">( reviews)</span>
-    </div>
-    <div class="hero-actions">
-      <a href="tel:+1 814-688-3090" class="btn-primary">📞 Call Now</a>
-      <a href="#" target="_blank" rel="noopener" class="btn-ghost">📍 Google Maps</a>
-    </div>
-  </div>
-</section>
+  <!-- --------------------------------------------------
+       HEADER & NAVIGATION
+       -------------------------------------------------- -->
+  <header id="main-header">
+    <div class="nav-container">
+      <a href="#hero" class="logo-box">
+        C <span class="gold-text">@</span> C
+      </a>
+      
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-<!-- ===== SERVICES ===== -->
-<section class="section section--dark">
-  <div class="wrap">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
+      <ul class="nav-menu" id="nav-list">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="tel:+18146883090" class="nav-cta-btn">Call Now</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <div class="service-card">
-      <div class="service-icon">🧹</div>
-      <h3>Regular Home Cleaning</h3>
-      <p>Weekly or bi-weekly cleaning to keep your home spotless and fresh.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🧹</div>
-      <h3>Deep Cleaning</h3>
-      <p>Thorough top-to-bottom cleaning for kitchens, bathrooms, and all living areas.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🧹</div>
-      <h3>Move-In / Move-Out Clean</h3>
-      <p>Get your space move-in ready or leave it spotless when you go.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🧹</div>
-      <h3>Office & Commercial Clean</h3>
-      <p>Keep your workspace professional, sanitized, and employee-ready.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🧹</div>
-      <h3>Post-Construction Clean</h3>
-      <p>Remove dust, debris, and residues after renovation or building work.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🧹</div>
-      <h3>Eco-Friendly Options</h3>
-      <p>Green cleaning products available — safe for kids, pets, and the planet.</p>
-    </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== INFO + MAP ===== -->
-<section class="section">
-  <div class="wrap wrap--narrow">
-    <div class="section-label">Get In Touch</div>
-    <h2 class="section-title">Contact &amp; Location</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="info-card-label">📍 Address</div>
-        <div class="info-card-value">108 Extension Rd</div>
-      </div>
-      <div class="info-card">
-        <div class="info-card-label">📞 Phone</div>
-        <a href="tel:+1 814-688-3090" class="info-link">+1 814-688-3090</a>
+  <!-- --------------------------------------------------
+       HERO SECTION
+       -------------------------------------------------- -->
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-pretitle reveal">Licensed & Insured • Free Estimates</span>
+      <h1 class="hero-title reveal delay-100">C @ C Tree Service</h1>
+      <p class="hero-tagline reveal delay-200">
+        Premium arboricultural craftsmanship and storm restoration for residential and commercial properties in Garland, PA, and surrounding regions.
+      </p>
+      <div class="hero-buttons reveal delay-300">
+        <a href="#contact" class="btn-luxury btn-gold">Request Estimate</a>
+        <a href="#services" class="btn-luxury btn-outline">Explore Services</a>
       </div>
     </div>
-    <div class="map-wrap">
-      <iframe
-        title="C @ C tree service location"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=108+Extension+Rd&amp;output=embed">
-      </iframe>
+  </section>
+
+  <main>
+    <!-- --------------------------------------------------
+         SERVICES SECTION
+         -------------------------------------------------- -->
+    <section id="services">
+      <div class="section-header reveal">
+        <span class="sec-number">01</span>
+        <span class="sec-pre">Craftsmanship</span>
+        <h2 class="sec-title">Our Service Offerings</h2>
+        <p class="sec-desc">
+          Professional, safe, and efficient solutions tailored to handle projects of any scale, from precision trimming to commercial-grade lot clearing.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1: Tree Removal -->
+        <div class="service-card reveal reveal-scale">
+          <div>
+            <div class="service-icon-box">
+              <!-- Custom Stylized Tree Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L19 12H5L12 2Z"/>
+                <path d="M12 8L21 19H3L12 8Z"/>
+                <path d="M12 19V22"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Tree Removal</h3>
+            <p class="service-text">
+              Precision extraction of hazardous, dead, or encroaching trees. Utilizing high-end rigging equipment to safely navigate tight spaces and protect structures.
+            </p>
+          </div>
+          <span class="service-badge">Elite Standard</span>
+        </div>
+
+        <!-- Service 2: Stump Grinding -->
+        <div class="service-card reveal reveal-scale delay-100">
+          <div>
+            <div class="service-icon-box">
+              <!-- Custom Saw/Grinding Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12"/>
+                <path d="M12 6V12L16 14"/>
+                <path d="M18 10L20 8"/>
+                <path d="M17 14L19 15"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Stump Grinding</h3>
+            <p class="service-text">
+              Complete eradication of roots and unsightly stumps. Reclaim your lawn footprint, prevent pest infestation, and prepare soil for replanting or turf installation.
+            </p>
+          </div>
+          <span class="service-badge">Precision Care</span>
+        </div>
+
+        <!-- Service 3: Professional Pruning -->
+        <div class="service-card reveal reveal-scale delay-200">
+          <div>
+            <div class="service-icon-box">
+              <!-- Custom Branch/Shear Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 12 17 12"/>
+                <path d="M19 9c.8 3.5-1 7-4 8"/>
+                <path d="M7 21h10"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Fine Pruning</h3>
+            <p class="service-text">
+              Aesthetic and structural canopy trimming. Enhances light penetration, boosts air flow, and removes disease-prone branches to support long-term arborist health.
+            </p>
+          </div>
+          <span class="service-badge">Biological Health</span>
+        </div>
+
+        <!-- Service 4: Emergency Storm Damage -->
+        <div class="service-card reveal reveal-scale">
+          <div>
+            <div class="service-icon-box">
+              <!-- Custom Lightning/Storm Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Emergency Storm Response</h3>
+            <p class="service-text">
+              24/7 priority dispatch for storm-damaged, split, or fallen trees. Rapid hazard isolation to safely protect utility lines, driveways, and roofing structures.
+            </p>
+          </div>
+          <span class="service-badge">Immediate Care</span>
+        </div>
+
+        <!-- Service 5: Lot Clearing -->
+        <div class="service-card reveal reveal-scale delay-100">
+          <div>
+            <div class="service-icon-box">
+              <!-- Custom Earth/Clearing Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 20h20"/>
+                <path d="M5 17l2-3h10l2 3"/>
+                <path d="M9 14V9a3 3 0 0 1 6 0v5"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Lot Clearing</h3>
+            <p class="service-text">
+              Full-scale acreage preparation. Efficient extraction of dense brush, saplings, and trees to prepare real estate properties for building, surveyance, or landscaping.
+            </p>
+          </div>
+          <span class="service-badge">Development Ready</span>
+        </div>
+
+        <!-- Service 6: Cabling & Bracing -->
+        <div class="service-card reveal reveal-scale delay-200">
+          <div>
+            <div class="service-icon-box">
+              <!-- Custom Support Cable Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 18c0-3.5 2.5-6 6-6s6 2.5 6 6"/>
+                <path d="M12 12V3"/>
+                <path d="M8 6h8"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Cabling & Bracing</h3>
+            <p class="service-text">
+              Structural reinforcement of historically significant or structurally compromised split-trunks. Reduces leverage stress from strong winds and ice accumulation.
+            </p>
+          </div>
+          <span class="service-badge">Structural Integrity</span>
+        </div>
+
+        <!-- Service 7: Mulch Delivery -->
+        <div class="service-card reveal reveal-scale">
+          <div>
+            <div class="service-icon-box">
+              <!-- Custom Mulch Pile/Delivery Icon -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                <path d="M14 3v5h5"/>
+                <path d="M16 13H8"/>
+                <path d="M16 17H8"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Mulch Delivery</h3>
+            <p class="service-text">
+              Premium-grade organic wood mulch delivered directly to your site. Ideal for soil nourishment, root system moisture retention, and uniform aesthetic border designs.
+            </p>
+          </div>
+          <span class="service-badge">Eco Friendly</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------
+         ABOUT SECTION
+         -------------------------------------------------- -->
+    <section id="about">
+      <div class="section-header reveal">
+        <span class="sec-number">02</span>
+        <span class="sec-pre">Our Heritage</span>
+        <h2 class="sec-title">About C @ C Tree Service</h2>
+        <p class="sec-desc">
+          Rooted in Garland, PA, we combine traditional safety values with cutting-edge arboricultural science to elevate structural tree care standards.
+        </p>
+      </div>
+
+      <div class="about-layout">
+        <!-- Asymmetrical Image and Overlay Panel -->
+        <div class="about-visual reveal reveal-left">
+          <img class="about-img" src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop" alt="Sunlight filtering through a dense pine forest canopy managed by arborist experts">
+          <div class="about-overlay-info">
+            <h4 class="about-overlay-title">100% Protection</h4>
+            <p class="about-overlay-text">Fully licensed and comprehensive general liability insurance coverage for absolute client peace of mind.</p>
+          </div>
+        </div>
+
+        <!-- Luxe Timeline -->
+        <div>
+          <div class="timeline-container">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item reveal reveal-right">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">Philosophy</span>
+              <h3 class="timeline-title">Uncompromising Quality</h3>
+              <p class="timeline-desc">
+                We believe that tree removal and arborist care are forms of craftsmanship. We do not just fell trees; we assess environmental factors, architectural hazards, and long-term soil integrity to execute clean, damage-free tasks.
+              </p>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item reveal reveal-right delay-100">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">Standard</span>
+              <h3 class="timeline-title">Elite Safety Protocols</h3>
+              <p class="timeline-desc">
+                Our team undergoes strict safety training. Equipped with professional climbing gear, rigging blocks, and heavy machinery, we handle structurally compromised trees near buildings and powerlines with controlled, precision lowering.
+              </p>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item reveal reveal-right delay-200">
+              <div class="timeline-dot"></div>
+              <span class="timeline-time">Community</span>
+              <h3 class="timeline-title">Garland, PA Roots</h3>
+              <p class="timeline-desc">
+                As a family-owned business in PA, we build lasting relationships. Every estimate is free, completely transparent, and structured to meet your specific budget limits without hidden disposal fees.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------
+         TESTIMONIALS SECTION
+         -------------------------------------------------- -->
+    <section id="testimonials">
+      <div class="section-header reveal">
+        <span class="sec-number">03</span>
+        <span class="sec-pre">Endorsements</span>
+        <h2 class="sec-title">Client Testimonials</h2>
+        <p class="sec-desc">
+          Discover why homeowners and businesses in Garland and surrounding PA counties trust C @ C Tree Service for precision and safety.
+        </p>
+      </div>
+
+      <div class="testimonials-container">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card reveal reveal-scale">
+          <span class="quote-icon">“</span>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-content">
+            "C @ C tree service did an outstanding job removing three massive hemlocks leaning directly over our garage. They lowered every section with ropes, causing zero impact to the lawn. Clean-up was immaculate!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RH</div>
+            <div class="author-info">
+              <h4>Robert Harrison</h4>
+              <p>Garland, PA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card reveal reveal-scale delay-100">
+          <span class="quote-icon">“</span>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-content">
+            "We had emergency storm damage after a midnight microburst. C @ C arrived by 6 AM, secured the tree limb resting on our roof, and cleared the driveway. Very fair pricing for such rapid response!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div class="author-info">
+              <h4>Sarah Miller</h4>
+              <p>Pittsfield, PA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card reveal reveal-scale delay-200">
+          <span class="quote-icon">“</span>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-content">
+            "I hired them for lot clearing and stump grinding on our commercial real estate expand project. Their crew was professional, punctual, and completed the job ahead of schedule. Highly recommend for any commercial job."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DK</div>
+            <div class="author-info">
+              <h4>David K.</h4>
+              <p>Warren, PA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------
+         CONTACT & INQUIRIES SECTION
+         -------------------------------------------------- -->
+    <section id="contact">
+      <div class="section-header reveal">
+        <span class="sec-number">04</span>
+        <span class="sec-pre">Consultation</span>
+        <h2 class="sec-title">Begin Your Project</h2>
+        <p class="sec-desc">
+          Reach out for a complimentary consultation. Speak directly with an arborist expert, schedule a site evaluation, or request an emergency dispatch.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Contact details and grayscale map -->
+        <div class="contact-info-panel reveal reveal-left">
+          <div class="contact-methods">
+            <!-- Method 1: Phone -->
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="contact-method-details">
+                <h4>Direct Phone</h4>
+                <p><a href="tel:+18146883090">+1 814-688-3090</a></p>
+              </div>
+            </div>
+
+            <!-- Method 2: Email -->
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-method-details">
+                <h4>Email Inbox</h4>
+                <p><a href="mailto:cam21885@gmail.com">cam21885@gmail.com</a></p>
+              </div>
+            </div>
+
+            <!-- Method 3: Address -->
+            <div class="contact-method-item">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-method-details">
+                <h4>HQ Address</h4>
+                <p>108 Extension Rd, Garland, PA</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grayscale Google Maps Embed -->
+          <div class="map-container">
+            <iframe class="grayscale-map" 
+                    src="https://maps.google.com/maps?q=Garland,%20PA&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Elegant Contact Form with Floating Labels -->
+        <div class="contact-form-box reveal reveal-right">
+          <h3>Request A Consultation</h3>
+          <form id="estimation-form" action="#" method="POST">
+            <!-- Name Field -->
+            <div class="floating-group">
+              <input type="text" id="form-name" name="name" placeholder=" " required>
+              <label for="form-name">Full Name</label>
+            </div>
+
+            <!-- Email Field -->
+            <div class="floating-group">
+              <input type="email" id="form-email" name="email" placeholder=" " required>
+              <label for="form-email">Email Address</label>
+            </div>
+
+            <!-- Phone Field -->
+            <div class="floating-group">
+              <input type="tel" id="form-phone" name="phone" placeholder=" ">
+              <label for="form-phone">Phone Number</label>
+            </div>
+
+            <!-- Service Dropdown -->
+            <div class="floating-group">
+              <select id="form-service" name="service" required>
+                <option value="" disabled selected hidden></option>
+                <option value="removal">Tree Removal</option>
+                <option value="grinding">Stump Grinding</option>
+                <option value="pruning">Professional Pruning</option>
+                <option value="storm">Emergency Storm Response</option>
+                <option value="clearing">Lot Clearing</option>
+                <option value="cabling">Cabling & Bracing</option>
+                <option value="mulch">Mulch Delivery</option>
+                <option value="other">Other / Custom Support</option>
+              </select>
+              <label for="form-service">Required Service</label>
+            </div>
+
+            <!-- Message Field -->
+            <div class="floating-group">
+              <textarea id="form-message" name="message" placeholder=" " required></textarea>
+              <label for="form-message">Describe Your Project (e.g. tree diameter, location near utility wires...)</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-luxury btn-gold" style="width: 100%; border: none;">Send Request</button>
+          </form>
+
+          <!-- Form submission success state -->
+          <div class="form-success-message" id="form-success">
+            Thank you! Your estimate request has been received. Our team will contact you shortly.
+          </div>
+        </div>
+      </div>
+    </main>
+
+  <!-- --------------------------------------------------
+       FOOTER
+       -------------------------------------------------- -->
+  <footer>
+    <div class="footer-top">
+      <a href="#hero" class="logo-box">
+        C <span class="gold-text">@</span> C
+      </a>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </div>
-</section>
+    
+    <div class="footer-bottom">
+      <p class="copyright">
+        © 2026 C @ C Tree Service. All rights reserved. Garland, PA.
+      </p>
+      <span class="footer-badge">Licensed & Fully Insured</span>
+    </div>
+  </footer>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-inner">
-    <p><strong>C @ C tree service</strong> &nbsp;·&nbsp; 108 Extension Rd</p>
-    <p style="margin-top:8px;">+1 814-688-3090</p>
-    <p style="margin-top:12px;">Preview site built by <a href="https://clawops.studio" target="_blank">ClawOps Studio</a></p>
+  <!-- Scroll to top button -->
+  <div class="scroll-top-btn" id="scroll-btn" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
   </div>
-</footer>
 
-<!-- ===== STICKY CTA ===== -->
-<div class="pad-bottom"></div>
-<div class="sticky-bar">
-  <div class="sticky-bar-info">
-    <div class="sticky-bar-name">C @ C tree service</div>
-    <div class="sticky-bar-phone">+1 814-688-3090</div>
-  </div>
-  <a href="tel:+1 814-688-3090" class="sticky-cta">📞 Call Now</a>
-</div>
+  <!-- --------------------------------------------------
+       JAVASCRIPT SCRIPTS
+       -------------------------------------------------- -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Sticky Navigation Header Control
+      const header = document.getElementById('main-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
 
+      // 2. Mobile Menu Toggle Control
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const navList = document.getElementById('nav-list');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        navList.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking nav links
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('active');
+          navList.classList.remove('active');
+        });
+      });
+
+      // 3. CSS Scroll-Triggered Animations (Intersection Observer)
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1
+      };
+
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-active');
+            observer.unobserve(entry.target); // Trigger only once
+          }
+        });
+      }, observerOptions);
+
+      // Register all reveal elements
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(elem => {
+        scrollObserver.observe(elem);
+      });
+
+      // 4. Scroll To Top Button visibility
+      const scrollTopBtn = document.getElementById('scroll-btn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+      });
+
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // 5. Contact Form Client-side Handle
+      const contactForm = document.getElementById('estimation-form');
+      const successMsg = document.getElementById('form-success');
+
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Premium transition fade out
+        contactForm.style.transition = 'opacity 0.5s ease';
+        contactForm.style.opacity = '0';
+        
+        setTimeout(() => {
+          contactForm.style.display = 'none';
+          successMsg.style.display = 'block';
+          successMsg.style.opacity = '0';
+          
+          // Fade in success message
+          setTimeout(() => {
+            successMsg.style.transition = 'opacity 0.5s ease';
+            successMsg.style.opacity = '1';
+          }, 50);
+          
+        }, 500);
+      });
+    });
+  </script>
 </body>
 </html>
